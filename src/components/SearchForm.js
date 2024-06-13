@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-
+//Search Box
 const SearchForm = ({ onSearch, types }) => {
+  //states
   const [search, setSearch] = useState("");
   const [type, setType] = useState("");
 
+  //Handle the search
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch({ search, type });
     console.log(
       "Attributes of select:",
-      document.querySelector("select").attributes
+      document.querySelector("select").attributes,
     );
     console.log(
       "Attributes of input:",
-      document.querySelector("input").attributes
+      document.querySelector("input").attributes,
     );
   };
 

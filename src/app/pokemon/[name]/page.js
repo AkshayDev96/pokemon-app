@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPokemonData } from "../../../lib/pokemon";
-
+//this component is for veiewing the details of pokemon
 export default async function PokemonDetail({ params }) {
   const { name } = params;
+  //get details
   const pokemon = await getPokemonData(name);
 
+  //if notFound pokemon details
   if (!pokemon) {
     return notFound();
   }
